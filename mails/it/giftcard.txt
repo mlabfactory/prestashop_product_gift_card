@@ -1,0 +1,40 @@
+🎁 LA TUA GIFT CARD!
+
+Ciao {recipient_name},
+
+Hai ricevuto una fantastica Gift Card da {sender_name}!
+
+{if $message}
+Messaggio personale:
+"{message}"
+{/if}
+
+════════════════════════════════════
+DETTAGLI GIFT CARD
+════════════════════════════════════
+
+Valore:         {giftcard_amount}
+Codice:         {giftcard_code}
+Valida fino al: {expiry_date}
+
+════════════════════════════════════
+
+COME UTILIZZARE LA TUA GIFT CARD:
+
+1. Aggiungi i prodotti al carrello sul nostro sito
+2. Procedi al checkout
+3. Inserisci il codice {giftcard_code} nell'apposito campo
+4. Lo sconto verrà applicato automaticamente!
+
+Vai allo Shop: {shop_url}
+
+NOTA: Conserva questa email. Potrai utilizzare la Gift Card fino al {expiry_date}. 
+Se il valore dell'ordine è inferiore al valore della Gift Card, il credito residuo 
+rimarrà disponibile per acquisti futuri.
+
+════════════════════════════════════
+
+Grazie per aver scelto {shop_name}!
+
+Questa è una email automatica, per favore non rispondere.
+Per assistenza, contatta il nostro servizio clienti.

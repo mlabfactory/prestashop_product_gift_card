@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La tua Gift Card - Dolce & Zampa</title>
+    <style>
+        body { 
+            font-family: 'Arial', sans-serif; 
+            background-color: #F5F1E8; 
+            margin: 0; 
+            padding: 20px; 
+            line-height: 1.6;
+        }
+        .container { 
+            max-width: 600px; 
+            margin: 0 auto; 
+            background: white; 
+            border-radius: 15px; 
+            overflow: hidden; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .header { 
+            background: linear-gradient(135deg, #D4B896, #B8A082); 
+            padding: 30px; 
+            text-align: center; 
+        }
+        .header h1 {
+            color: white; 
+            margin: 0;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .header p {
+            color: white; 
+            margin: 10px 0 0 0;
+            font-size: 16px;
+        }
+        .content { 
+            padding: 30px; 
+        }
+        .content h2 {
+            color: #5D4E37;
+            margin-top: 0;
+        }
+        .info-box { 
+            background: #E8DCC0; 
+            border: 3px dashed #B8A082; 
+            border-radius: 15px; 
+            padding: 25px; 
+            margin: 25px 0; 
+            text-align: center;
+        }
+        .info-box h3 {
+            margin: 0 0 15px 0; 
+            color: #8B6914;
+            font-size: 18px;
+        }
+        .giftcard-amount {
+            font-size: 36px;
+            font-weight: bold;
+            color: #5D4E37;
+            margin: 15px 0;
+        }
+        .giftcard-code {
+            font-size: 24px;
+            font-weight: bold;
+            color: #5D4E37;
+            margin: 15px 0;
+            letter-spacing: 2px;
+            padding: 10px;
+            background: rgba(255,255,255,0.7);
+            border-radius: 8px;
+        }
+        .security-tips {
+            background: #F9F6F0;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .security-tips h3 {
+            margin-top: 0;
+            color: #8B6914;
+        }
+        .security-tips ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+        .security-tips li {
+            margin: 8px 0;
+            color: #5D4E37;
+        }
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #D4B896, #B8A082);
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        .footer { 
+            background: #F5F1E8; 
+            padding: 20px; 
+            text-align: center; 
+            font-size: 12px; 
+            color: #666; 
+        }
+        .footer a {
+            color: #8B6914;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="https://www.dolcezampa.com/img/logo.png" alt="Dolce & Zampa" style="max-width: 150px; margin-bottom: 15px;">
+            <h1>🎁 La tua Gift Card!</h1>
+            <p>Un regalo speciale ti aspetta</p>
+        </div>
+        
+        <div class="content">
+            <h2>Ciao {recipient_name}! 👋</h2>
+            <p>Hai ricevuto una fantastica Gift Card da <strong>{sender_name}</strong> per <strong>Dolce & Zampa</strong>!</p>
+            
+            <p>Questo regalo speciale è stato pensato per te e per i tuoi amici a quattro zampe. Potrai utilizzarlo per acquistare tutti i prodotti che desideri dal nostro catalogo di accessori di qualità.</p>
+            
+            {if $message}
+            <div class="security-tips">
+                <h3>💌 Messaggio personale da {sender_name}</h3>
+                <p style="font-style: italic; color: #5D4E37; margin: 0;">"{message}"</p>
+            </div>
+            {/if}
+            
+            <div class="info-box">
+                <h3>🎉 La tua Gift Card</h3>
+                <div class="giftcard-amount">{giftcard_amount}</div>
+                <p style="margin: 10px 0; color: #8B6914; font-weight: bold;">Codice Gift Card:</p>
+                <div class="giftcard-code">{giftcard_code}</div>
+                <p style="font-size: 14px; color: #666; margin: 15px 0 0 0;">
+                    Valida fino al <strong>{expiry_date}</strong>
+                </p>
+            </div>
+            
+            <div class="security-tips">
+                <h3>🛍️ Come utilizzare la tua Gift Card</h3>
+                <ul>
+                    <li><strong>Aggiungi al carrello:</strong> Scegli i prodotti che desideri dal nostro catalogo</li>
+                    <li><strong>Vai al checkout:</strong> Procedi con il processo di acquisto</li>
+                    <li><strong>Inserisci il codice:</strong> Usa il codice <strong>{giftcard_code}</strong> nell'apposito campo</li>
+                    <li><strong>Completa l'ordine:</strong> Lo sconto verrà applicato automaticamente!</li>
+                </ul>
+            </div>
+            
+            <div style="text-align: center;">
+                <a href="{shop_url}" class="cta-button">Inizia a fare shopping</a>
+            </div>
+            
+            <p style="margin-top: 30px;">
+                <strong>Informazioni importanti:</strong><br>
+                ✓ Conserva questa email con cura per future referenze<br>
+                ✓ La Gift Card è valida fino al <strong>{expiry_date}</strong><br>
+                ✓ Se l'ordine è inferiore al valore della Gift Card, il credito rimane disponibile<br>
+                ✓ Puoi utilizzare la Gift Card per più acquisti fino a esaurimento credito
+            </p>
+            
+            <p>Fai le feste ai tuoi amici pelosi da parte nostra! 🐕🐈</p>
+            
+            <p><strong>Il team di Dolce & Zampa</strong><br>
+            <em>Un mondo di dolcezza per le tue zampe del cuore</em></p>
+        </div>
+        
+        <div class="footer">
+            <p>© 2025 <strong>{shop_name}</strong>. Tutti i diritti riservati.</p>
+            <p>
+                <a href="{shop_url}">Visita il nostro negozio</a> | 
+                <a href="{shop_url}/privacy-policy">Privacy Policy</a> | 
+                <a href="{shop_url}/contact-us">Contattaci</a>
+            </p>
+            <p style="margin-top: 15px; font-size: 11px;">
+                Questa è una email automatica, per favore non rispondere.<br>
+                Per assistenza, contatta il nostro servizio clienti.
+            </p>
+        </div>
+    </div>
+</body>
+</html>

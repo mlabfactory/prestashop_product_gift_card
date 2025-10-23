@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Gift Card</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            background: #ffffff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+        .content {
+            padding: 40px 30px;
+        }
+        .giftcard-box {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            margin: 30px 0;
+            color: white;
+        }
+        .giftcard-code {
+            font-size: 32px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin: 20px 0;
+            padding: 15px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 8px;
+            word-break: break-all;
+        }
+        .giftcard-amount {
+            font-size: 48px;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+        .message-box {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .info-table {
+            width: 100%;
+            margin: 20px 0;
+        }
+        .info-table td {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .info-table td:first-child {
+            font-weight: bold;
+            width: 40%;
+        }
+        .footer {
+            background: #f8f9fa;
+            padding: 20px 30px;
+            text-align: center;
+            font-size: 14px;
+            color: #666;
+        }
+        .button {
+            display: inline-block;
+            padding: 15px 30px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎁 Your Gift Card!</h1>
+        </div>
+        
+        <div class="content">
+            <p>Hello {recipient_name},</p>
+            
+            <p>You've received an amazing Gift Card from <strong>{sender_name}</strong>!</p>
+            
+            {if $message}
+            <div class="message-box">
+                <strong>Personal message:</strong><br>
+                <em>"{message}"</em>
+            </div>
+            {/if}
+            
+            <div class="giftcard-box">
+                <p style="margin: 0; font-size: 18px;">Gift Card Value</p>
+                <div class="giftcard-amount">{giftcard_amount}</div>
+                <p style="margin: 10px 0; font-size: 16px;">Gift Card Code:</p>
+                <div class="giftcard-code">{giftcard_code}</div>
+            </div>
+            
+            <table class="info-table">
+                <tr>
+                    <td>Value:</td>
+                    <td>{giftcard_amount}</td>
+                </tr>
+                <tr>
+                    <td>Code:</td>
+                    <td><strong>{giftcard_code}</strong></td>
+                </tr>
+                <tr>
+                    <td>Valid until:</td>
+                    <td>{expiry_date}</td>
+                </tr>
+            </table>
+            
+            <h3>How to use your Gift Card:</h3>
+            <ol>
+                <li>Add products to your cart on our website</li>
+                <li>Proceed to checkout</li>
+                <li>Enter the code <strong>{giftcard_code}</strong> in the appropriate field</li>
+                <li>The discount will be applied automatically!</li>
+            </ol>
+            
+            <p style="text-align: center;">
+                <a href="{shop_url}" class="button">Go to Shop</a>
+            </p>
+            
+            <p style="font-size: 14px; color: #666; margin-top: 30px;">
+                <strong>Note:</strong> Keep this email safe. You can use the Gift Card until {expiry_date}. 
+                If your order value is less than the Gift Card value, the remaining credit will stay available for future purchases.
+            </p>
+        </div>
+        
+        <div class="footer">
+            <p>Thank you for choosing {shop_name}!</p>
+            <p style="font-size: 12px; margin-top: 10px;">
+                This is an automated email, please do not reply.<br>
+                For assistance, contact our customer service.
+            </p>
+        </div>
+    </div>
+</body>
+</html>

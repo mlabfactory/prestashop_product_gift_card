@@ -1,0 +1,36 @@
+{
+    "name": "mlab/product-gift-card",
+    "description": "PrestaShop 9 Gift Card Module with MVC Architecture",
+    "type": "prestashop-module",
+    "version": "1.0.0",
+    "authors": [
+        {
+            "name": "mlabfactory",
+            "email": "tech@mlabfactory.com"
+        }
+    ],
+    "license": "proprietary",
+    "require": {
+        "php": ">=7.4"
+    },
+    "require-dev": {
+        "phpstan/phpstan": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Mlab\\GiftCard\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Mlab\\GiftCard\\Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "platform": {
+            "php": "7.4"
+        },
+        "optimize-autoloader": true,
+        "sort-packages": true
+    }
+}
